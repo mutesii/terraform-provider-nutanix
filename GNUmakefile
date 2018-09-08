@@ -14,10 +14,6 @@ test: deps
 
 cibuild:
 	go build
-#	env GOOS=darwin GOARCH=amd64 go build
-#	env GOOS=windows GOARCH=amd64 go build
-#	env GOOS=linux GOARCH=amd64 go build
-#	env GOOS=linux GOARCH=ppc64 go build
 
 citest:
 	TF_ACC=1 go test $(TEST) -v $(TESTARGS) -timeout 120m -coverprofile c.out
@@ -26,8 +22,7 @@ fmt:
 	gofmt -s .
 
 extrasanity:
-	echo "==>sanity: golangci-lint"
-	curl -sfL https://install.goreleaser.com/github.com/golangci/golangci-lint.sh | bash -s -- -b $(GOPATH)/bin v1.9.3
+	curl -sfL https://install.goreleaser.com/github.com/golangci/golangci-lint.sh | bash -s -- -b $(GOPATH)/bin v1.10.2
 	$(GOPATH)/bin/golangci-lint run
 
 deps:
