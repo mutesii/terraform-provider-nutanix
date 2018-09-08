@@ -39,6 +39,8 @@ linters:
       # waiting on terraform/hashi to let us know how they want us to changle those errors
         # see Error return value of `d.Set` is not checked (errcheck)
     - typecheck
+    - gosec
+      # gosec is disabled upstream
 
 issues:
   exclude:
