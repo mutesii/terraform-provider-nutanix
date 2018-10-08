@@ -58,7 +58,7 @@ func TestAccNutanixImage_Update(t *testing.T) {
 				Check: resource.ComposeTestCheckFunc(
 					testAccCheckNutanixImageExists(resourceName),
 					resource.TestCheckResourceAttr(resourceName, "name", fmt.Sprintf("Ubuntu-%d-updated", rInt)),
-					resource.TestCheckResourceAttr(resourceName, "description", "Ubuntu updated"),
+					resource.TestCheckResourceAttr(resourceName, "description", "Ubuntu Updated"),
 				),
 			},
 			{
